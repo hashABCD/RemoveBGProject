@@ -3,7 +3,7 @@
 
 ### Step 1. Clone this repo 
 ```bash
-git clone <this repo>
+git clone https://github.com/hashABCD/RemoveBGProject
 cd /RemoveBGProject
 ```
 
