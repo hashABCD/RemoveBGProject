@@ -9,7 +9,7 @@ input_files = ["brad-pitt-jpeg.jpg", "brad-pitt-png.png"]
 input_file_paths = [os.path.join(INPUT_DIR, file) for file in input_files]
 output_file_paths = [os.path.join(OUTPUT_DIR, file.replace(".jpg", ".png")) for file in input_files]
 
-for input_file_path in input_file_paths[:-1]:
+for input_file_path in input_file_paths:
         image = Image.open(input_file_path)         # read input file
         
         output_image = remove_background(image)     # remove background
