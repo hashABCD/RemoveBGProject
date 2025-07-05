@@ -4,24 +4,37 @@
 ### Step 1. Clone this repo 
 ```bash
 git clone https://github.com/hashABCD/RemoveBGProject
-cd /RemoveBGProject
+cd RemoveBGProject
 ```
 
-### Step 2. Install requirements
+### Step 2. Activate virtual environment and install requirements
+Activate virtual environment
+```
+python -m venv .venv        #create virtual environment
+
+# activate virtual environment
+source .venv/Scripts/activate       #Linux/MacOS 
+.venv\Scripts\activate              #Windows
+```
+
+Install requirements
 ```
 pip install -r requirements.txt
 ```
 
 ### Step 3. Download the pretrained model with weights
-Download the trained model [*BiRefNet-general-epoch_244.pth*](https://github.com/ZhengPeng7/BiRefNet/releases/download/v1/BiRefNet-general-resolution_512x512-fp16-epoch_216.pth) from this [git repo](https://github.com/ZhengPeng7/BiRefNet/releases) into assets folder
+Download the trained model [*BiRefNet-general-epoch_244.pth*](https://github.com/ZhengPeng7/BiRefNet/releases/download/v1/BiRefNet-general-epoch_244.pth) from this [git repo](https://github.com/ZhengPeng7/BiRefNet/releases) into assets folder
 
 ```bash
-cd assets
-wget https://github.com/ZhengPeng7/BiRefNet/releases/download/v1/BiRefNet-general-resolution_512x512-fp16-epoch_216.pth
+cd asset
 
+wget https://github.com/ZhengPeng7/BiRefNet/releases/download/v1/BiRefNet-general-epoch_244.pth
+#OR
+curl -kLSs -O https://github.com/ZhengPeng7/BiRefNet/releases/download/v1/BiRefNet-general-epoch_244.pth
 ```
 ### Step 4. See the remove background function in action
 ```
+cd ..
 python main.py
 ```
 This should show two images of Brad Pitt without background as shown in the example below.
