@@ -1,17 +1,6 @@
-# To load environment variables
-import os
-from dotenv import load_dotenv
-load_dotenv()
-BIREFNET_REPO_PATH = os.environ.get("BIREFNET_REPO_PATH")
-
-# Basic image processing
 from PIL import Image
 import torch
 from torchvision import transforms
-
-# # For BirefNet
-# import sys
-# sys.path.insert(0, BIREFNET_REPO_PATH)
 
 from models.birefnet import BiRefNet
 from image_proc import refine_foreground
