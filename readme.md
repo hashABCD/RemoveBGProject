@@ -39,7 +39,11 @@ python main.py
 ```
 This should show two images of Brad Pitt without background as shown in the example below.
 
-### Step 5. Using *remove_background* function
+### Step 5. Usage
+How to use the function:
+- Pillow Image input and output
+- Numpy ndarray input and output 
+### Step 5.1: Pillow Image input and output
 *remove_background* function can be used as below
 ```python
 from PIL import Image
@@ -48,6 +52,18 @@ from birefnet_rembg import remove_background
 image = Image.open("path/to/image")     #convert image to PIL image
 output_image = remove_background(image) # get image without background 
 output_image.show()                     # view image without background
+```
+### Step 5.2: Numpy ndarray input and output
+*remove_background_ndarray* function can be used as below
+```python
+import numpy as np
+from PIL import Image
+from birefnet_rembg import remove_background_ndarray
+
+
+image = np.array(Image.open("path/to/image"))     #read image as ndarray
+output_image = remove_background_ndarray(image) # get image without background as ndarray
+Image.fromarray(output_image).show()             # view image without background
 ```
 <hr><br>
 
