@@ -77,3 +77,29 @@ def remove_background(image : Image, save: bool = False, output_file_path: str =
         image_masked.save(output_file_path)
 
     return image_masked
+
+def remove_background_ndarray(image_np : np.ndarray) -> np.ndarray:
+    """
+    This function takes image in ndarray format with background and returns image in ndarray format without background.
+    This is a wrapper around remove_background function which takes PIL image.
+
+    Args:
+        image (np.ndarray): Image with background in ndarray format
+
+    Returns:
+        np.ndarray: image without background in ndarray format
+    """
+
+    # Convert ndarray to PIL Image
+    image = Image.fromarray(image_np)
+
+    # Call remove_background function
+    output_image = remove_background(image)
+    
+    # Convert PIL Image to ndarray
+    output_image_np = np.array(output_image)
+
+    #Return output image
+    return output_image_np
+
+
